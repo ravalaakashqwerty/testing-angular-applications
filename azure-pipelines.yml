@@ -18,5 +18,10 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
-    ng build
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: '/packages/'
+    customRegistry: 'useFeed'
+    customFeed: 'b66ecd50-a814-4e3a-8694-527870b679e2'
   displayName: 'npm install and build'
